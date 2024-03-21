@@ -1,6 +1,6 @@
 package String;
 
-public class ascii_practice_01
+public class ascii_01
 {
     
     public static void main (String[] args) {
