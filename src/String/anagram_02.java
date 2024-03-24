@@ -1,8 +1,5 @@
 package String;
 
-import java.util.Map;
-import java.util.Scanner;
-
 public class anagram_02
 {
     public static void main (String[] args) {
