@@ -55,13 +55,13 @@ public class salt_bomb_05
 //            needHour += 24;
 //        }
         
-        // 계층적으로 표현되는 각 단위를 계산할 때, 가장 작은 단위로 통일하면 더 편할수 있음
-        int currentSecondAmount = Integer.parseInt(currentTimes[0]) * 3600 + Integer.parseInt(currentTimes[1]) * 60 + Integer.parseInt(currentTimes[2]);
-        int targetSecondAmount = Integer.parseInt(dropTimes[0]) * 3600 + Integer.parseInt(dropTimes[1]) * 60 + Integer.parseInt(dropTimes[2]);
+        // 계층적으로 표현되는 각 단위를 계산할 때, 가장 작은 단위로 통일하면 더 편할수 있음 = 초로 통일 ex. byte / kb / mb
+        int currentSecondAmount = Integer.parseInt(currentTimes[0]) * 3600 + Integer.parseInt(currentTimes[1]) * 60 + Integer.parseInt(currentTimes[2]);  // 현재 시간
+        int dropSecondAmount = Integer.parseInt(dropTimes[0]) * 3600 + Integer.parseInt(dropTimes[1]) * 60 + Integer.parseInt(dropTimes[2]);  // 투하 시간
         
-        int needSecondAmount = targetSecondAmount - currentSecondAmount;
-        if ( needSecondAmount < 0 ) {
-            needSecondAmount += 24 * 3600;
+        int needSecondAmount = dropSecondAmount - currentSecondAmount;
+        if ( needSecondAmount <= 0 ) {
+            needSecondAmount += 24 * 3600;  // 음수일 경우 하루만 더해주면 된다
         }
         
         int needHour2 = needSecondAmount / 3600;
@@ -89,6 +89,7 @@ public class salt_bomb_05
     public static void timeCheck() {
         String time = "09:10:59";
         // 각 인덱스에서 10의 자리와 1의 자리를 구해서 계산
+        // 문자로 된 숫자에 아스키 0 값을 빼줘야 함
         int hour = (time.charAt(0) - '0') * 10 + (time.charAt(1) - '0');
         int minute = (time.charAt(3) - '0') * 10 + (time.charAt(4) - '0');
         int second = (time.charAt(6) - '0') * 10 + (time.charAt(7) - '0');
