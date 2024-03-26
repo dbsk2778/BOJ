@@ -1,6 +1,6 @@
 package String;
 
-public class anagram_02
+public class anagram02
 {
     public static void main (String[] args) {
         anagram("aabbccxx", "xxyyzzbb");
