@@ -22,7 +22,7 @@ public class salt_bomb_05
     // 두 번째 줄에는 소금 투하의 시간이 hh:mm:ss로 주어진다.
 
     // 출력
-    // 로봇팔이 소금을 투하할때까지 필요한 시간을 hh:mm:ss로 출력한다. 이 시간은 1초보다 크거나 같고, 24시간보다 작거나 같다.
+    // 로봇팔이 소금을 투하할때까지 필요한 시간을 hh:mm:ss로 출력한다. 이 시간은 1초보다 크거나 같고, 24시간보다 작거나 같다.  = 0이 되면 안된다.
     
     
     // 문제 HH:MM:SS 포맷의 두 시각의 차이를 HH:MM:SS 포맷으로 출력하기.
@@ -60,7 +60,7 @@ public class salt_bomb_05
         int dropSecondAmount = Integer.parseInt(dropTimes[0]) * 3600 + Integer.parseInt(dropTimes[1]) * 60 + Integer.parseInt(dropTimes[2]);  // 투하 시간
         
         int needSecondAmount = dropSecondAmount - currentSecondAmount;
-        if ( needSecondAmount <= 0 ) {
+        if ( needSecondAmount <= 0 ) {  // 00:00:00 이 나오면 안되니까, 0이랑 같을 경우도 같이 처리해야 한다.
             needSecondAmount += 24 * 3600;  // 음수일 경우 하루만 더해주면 된다
         }
         
