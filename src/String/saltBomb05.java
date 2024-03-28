@@ -2,7 +2,7 @@ package String;
 
 import java.util.Scanner;
 
-public class salt_bomb_05
+public class saltBomb05
 {
     
     public static void main (String[] args) {
