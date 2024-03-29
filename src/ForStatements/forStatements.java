@@ -1,4 +1,4 @@
-package forStatements;
+package ForStatements;
 
 import java.util.Scanner;
 
