@@ -9,21 +9,10 @@ public class theory {
    - 순서(index)를 가진 데이터의 집합으로 가장 기본적인 자료구조임.
    - 생성과 동시에 크기가 고정됨
    - 전체 원소가 메모리상에 일렬로 저장됨
-
-   2. 배열에 대한 시간 복잡도
-   - get(int idx) : idx 번째 원소 반환
-     arr[i]가 가능한 이유? 메모리가 연속적이기 때문에 arr의 시작 주소로부터 idx만큼 떨어진 원소의 주소를 바로 계산하고, 접근할 수 있다.
-     arr[i]는 한 번에 찾을 수 있기 때문에 시간 복잡도는 0(1)  == 상수 시간 복잡도
-   - change(int idx, int val) : idx번째 원소를 val로 변경
-   - append(int val) : 가장 뒤에 원소 삽입
-   - insert(int idx, int val) : 현재 idx 번째 원소의 앞에 원소 삽입
-   - erase(int idx) : idx 번째 원소 삭제
-
-
    */
 
   public static void main(String[] args) {
-//    defaultArray();
+    defaultArray();
     defaultArray2();
   }
 
