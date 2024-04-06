@@ -6,6 +6,7 @@ public class MaxMin {
 
   public static void main(String[] args) {
     minMax();
+    max();
   }
 
   public static void minMax() {
@@ -29,5 +30,23 @@ public class MaxMin {
       }
     }
     System.out.println(min + " " + max);
+  }
+
+  public static void max() {
+    Scanner scan = new Scanner(System.in);
+
+    String[] arr = scan.nextLine().split(" ");
+
+    int max = Integer.parseInt(arr[0]);
+    int index = 0;
+
+    for (int i = 0; i < arr.length; i++) {
+      if (Integer.parseInt(arr[i]) > max) {
+        max = Integer.parseInt(arr[i]);
+        index = i;
+      }
+    }
+    System.out.println(max);
+    System.out.println(index + 1);
   }
 }
