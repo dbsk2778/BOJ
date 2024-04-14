@@ -1,4 +1,4 @@
-package Bfs;
+package ExhaustiveSearch;
 
 import java.util.Scanner;
 
@@ -6,6 +6,7 @@ public class _11005 {
 
   // 완전 탐색 - 시뮬레이션
   public static void main(String[] args) {
+    _11005_1();
     _11005_2();
   }
 
