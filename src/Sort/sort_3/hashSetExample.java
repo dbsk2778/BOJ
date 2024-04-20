@@ -8,7 +8,7 @@ public class hashSetExample {
   // HashSet: 해시테이블을 기반으로 한 unordered collection (순서가 없다) -> 삽입 / 삭제 / 조회 연산: O(1)(기대), null 저장 가능
   // TreeSet: 이진 검색 트리(Binary Search Tree)를 기반으로 한 ordered collection (순서를 가짐) -> 삽입 / 삭제 / 조회 연산: O(logN), null 저장 불가능
 
-  // 항상 HashSet을 사용하는 것이 좋은게 아니다. 정렬된 상태로 유지해야한다면 , TreeSet을 사용하는 것이 좋다.
+  // 항상 HashSet을 사용하는 것이 좋은게 아니다. 정렬된 상태로 유지해야한다면, TreeSet을 사용하는 것이 좋다.
 
   public static void main(String[] args) {
     example();
