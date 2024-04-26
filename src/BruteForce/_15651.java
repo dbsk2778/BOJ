@@ -2,7 +2,7 @@ package BruteForce;
 
 import java.util.Scanner;
 
-public class theory {
+public class _15651 {
 
   /*
     완전탐색(Exhaustive Search)이란?  ** 부분 점수를 얻기는 좋지만, 시간 복잡도가 일반적으로 높다.
