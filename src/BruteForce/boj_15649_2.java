@@ -2,7 +2,7 @@ package BruteForce;
 
 import java.util.Scanner;
 
-public class _15649_2 {
+public class boj_15649_2 {
 
   /*
     BOJ 15649 : N과 M (1)
