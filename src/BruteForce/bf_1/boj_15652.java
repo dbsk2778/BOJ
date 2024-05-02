@@ -1,11 +1,12 @@
-package BruteForce;
+package BruteForce.bf_1;
 
 import java.util.Scanner;
 
-public class boj_15650 {
+public class boj_15652 {
 
-  // 오름차순으로 출력 <_> 15652와 다른 점 (비내림차순)
-  // 조합 (Combination) : 서로 다른 n개에서 순서에 상관없이 서로 다른 r개를 선택하는 것
+  // 고른 수열이 비내림차순인지 확인하는 함수 - 즉, 오름차순이거나 같은 수가 나오는 경우
+  // 시간 복잡도는 4*4*4*4 = 256번 연산 보단 작다.
+  // 시간 복잡도는 O(N^M) : 최악의 경우 82만번 연산 (1억 미만이면 대략 1초)
   static StringBuilder sb = new StringBuilder();
   static int n, m; // 사용해야 할 변구
   static int[] selected; // 선택된 수열을 저장하는 배열
@@ -29,8 +30,10 @@ public class boj_15650 {
         sb.append('\n');
       }
     } else {
-      //
-      for (int cand = selected[k-1]; cand <= n; cand++) {
+      int start = selected[k - 1]; // 오름차순을 위해 선택된 수열의 마지막 원소를 저장
+      if (start == 0) start = 1; // 0이면 1부터 시작
+      // 가능한 숫자의 시작인 start보다 큰 값들만 가능
+      for (int cand = start; cand <= n; cand++) {
         selected[k] = cand;
         // k+1 번지부터 M 번지까지 수를 고르는 모든 방법을 탐색
         rec_func(k + 1);
