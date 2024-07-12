@@ -1,6 +1,6 @@
 package Sort;
 
-public class Insertion {
+public class InsertionSort {
 
     /*
         삽입정렬 : 현재 비교하고자 하는 target(타겟)과 그 이전의 원소들과 비교하며 자리를 교환(swap)하는 정렬 방법
