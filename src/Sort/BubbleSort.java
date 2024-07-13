@@ -19,8 +19,13 @@ public class BubbleSort {
         int[] arr = {5, 2, 8, 6, 1, 9};
         bubbleSort(arr);
         System.out.println(Arrays.toString(arr));
+
+        int[] arr2 = {5, 2, 8, 6, 1, 9};
+        bubbleSort2(arr2);
+        System.out.println(Arrays.toString(arr2));
     }
 
+    // 기본적인 버블 정렬 구현으로, 배열이 이미 정렬되어 있더라도 항상 모든 요소를 반복 비교
     // 마지막부터 정렬된 숫자가 쌓임
     public static void bubbleSort(int[] arr) {
         int len = arr.length;
@@ -37,6 +42,24 @@ public class BubbleSort {
                     arr[j + 1] = tmp;
                 }
             }
+        }
+    }
+
+
+    // 향상된 버블 정렬로, change 플래그를 사용하여 배열이 이미 정렬된 경우 반복을 중지합니다. 따라서, 배열이 이미 정렬되어 있을 경우 최선의 시간 복잡도가 O(n)으로 개선
+    public static void bubbleSort2(int[] arr) {
+        int n = arr.length;
+        for(int i = 0 ; i < n - 1 ; i ++) {
+            boolean change = false;
+            for(int j = 0 ; j < n - 1 - i ; j ++){
+                if(arr[j] > arr[j + 1]) {
+                    change = true;
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+            if(!change) break;
         }
     }
 }
