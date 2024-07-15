@@ -12,12 +12,13 @@ public class ShellSort {
 
     public static void main(String[] args) {
         int[] arr = {5, 2, 8, 6, 1, 9};
-        shellSort(arr, arr.length);
+        shellSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
     //셀 정렬 함수
-    static void shellSort(int[] a, int n) {
+    static void shellSort(int[] arr) {
+        int n = arr.length;
         // h 값(초기 8)은 반복문을 돌 때 마다 절반으로 줄어든다.
         for (int h = n / 2; h > 0; h /= 2) {
             // i는 h(4)부터 시작하고, n(8)까지 반복한다.
@@ -27,15 +28,15 @@ public class ShellSort {
                 int j; // (1. j는 4-4 = 0)
 
                 // 현재 i 위치의 값을 tmp 변수에 저장한다.
-                int tmp = a[i]; // (7)
+                int tmp = arr[i]; // (7)
 
                 // j가 0 이상(배열의 시작)이고, a[j]가 tmp값보다 큰 경우에 반복된다.
                 // h만큼 간격이 있으므로, j를 h만큼 감소시킨다.
                 // swap
-                for (j = i - h; j >= 0 && a[j] > tmp; j -= h) {
-                    a[j + h] = a[j]; // j + h 위치에 j위치의 값을 대입한다. (a(0 + 4) = a(0) : 8 로 바뀜
+                for (j = i - h; j >= 0 && arr[j] > tmp; j -= h) {
+                    arr[j + h] = arr[j]; // j + h 위치에 j위치의 값을 대입한다. (a(0 + 4) = a(0) : 8 로 바뀜
                 }
-                a[j + h] = tmp; // j + h 위치에 tmp값을 대입한다. a[0] = 7
+                arr[j + h] = tmp; // j + h 위치에 tmp값을 대입한다. a[0] = 7
             }
         }
     }
