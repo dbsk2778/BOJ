@@ -35,53 +35,53 @@ public class ArrayBigO {
      원소에 접근하고 변경하는 것은 빠르나, 중간에 원소를 추가/삭제하는 것은 배열 원소의 개소까지 시간이 걸린다.
    */
 
-  public static void main(String[] args) {
-    int[] arr = {1, 2, 4, 3, 7, 8, 0};  // 7
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 4, 3, 7, 8, 0};  // 7
 
-    System.out.println(getElement(arr, 2));
-    System.out.println(changeElement(arr, 2, 13));
-    System.out.println(appendElement(arr, 6, 22));
-    System.out.println(appendElement(arr, 7, 22));
-  }
-
-
-  public static int getElement(int[] arr, int idx) {
-    return arr[idx];
-  }
-
-  public static int changeElement(int[] arr, int idx, int val) {
-    return arr[idx] = val;
-  }
-
-  public static boolean appendElement(int[] arr, int arrCount, int val) {
-    if (arrCount == arr.length) return false;   // 배열에 원소가 꽉 차있다.
-
-    arr[arrCount] = val;  // 가능하다면 원소 넣어주기
-    return true;
-  }
-
-  public static boolean insertElement(int[] arr, int arrCount, int idx, int val) {
-    if (idx > arrCount || arrCount >= arr.length) return false;
-
-    // i++ 로 안되는 이유는 계속 덮어씌워짐 !! arr[i+1] 값이 !! 기존값이 소실됨
-    for (int i = arrCount; i > idx; i--) {  // 마지막 원소부터 idx 에 들어있는 원소까지 +1 된 인덱스 값으로 다시 세팅해줘야 함
-      // 반복문의 시간 복잡도는 O(N)
-      arr[i] = arr[i-1];
+        System.out.println(getElement(arr, 2));
+        System.out.println(changeElement(arr, 2, 13));
+        System.out.println(appendElement(arr, 6, 22));
+        System.out.println(appendElement(arr, 7, 22));
     }
 
-    arr[idx] = val;
 
-    return true;
-  }
-
-  public static boolean eraseElement(int[] arr, int arrCount, int idx) {
-    if (idx >= arrCount) return false;
-
-    // 반복문의 시간 복잡도는 O(N) = 최악의 경우
-    for (int i = idx; i < arrCount; i++) {
-      arr[i] = arr[i + 1];
+    public static int getElement(int[] arr, int idx) {
+        return arr[idx];
     }
-    return true;
-  }
+
+    public static int changeElement(int[] arr, int idx, int val) {
+        return arr[idx] = val;
+    }
+
+    public static boolean appendElement(int[] arr, int arrCount, int val) {
+        if (arrCount == arr.length) return false;   // 배열에 원소가 꽉 차있다.
+
+        arr[arrCount] = val;  // 가능하다면 원소 넣어주기
+        return true;
+    }
+
+    public static boolean insertElement(int[] arr, int arrCount, int idx, int val) {
+        if (idx > arrCount || arrCount >= arr.length) return false;
+
+        // i++ 로 안되는 이유는 계속 덮어씌워짐 !! arr[i+1] 값이 !! 기존값이 소실됨
+        for (int i = arrCount; i > idx; i--) {  // 마지막 원소부터 idx 에 들어있는 원소까지 +1 된 인덱스 값으로 다시 세팅해줘야 함
+            // 반복문의 시간 복잡도는 O(N)
+            arr[i] = arr[i - 1];
+        }
+
+        arr[idx] = val;
+
+        return true;
+    }
+
+    public static boolean eraseElement(int[] arr, int arrCount, int idx) {
+        if (idx >= arrCount) return false;
+
+        // 반복문의 시간 복잡도는 O(N) = 최악의 경우
+        for (int i = idx; i < arrCount; i++) {
+            arr[i] = arr[i + 1];
+        }
+        return true;
+    }
 
 }

@@ -19,8 +19,8 @@ public class BOJ3009 {
         int fourthX = findSpot(Integer.parseInt(x[0]), Integer.parseInt(y[0]), Integer.parseInt(z[0]));
         int fourthY = findSpot(Integer.parseInt(x[1]), Integer.parseInt(y[1]), Integer.parseInt(z[1]));
 
-       bw.write(fourthX + " " + fourthY + "\n");
-       bw.flush();
+        bw.write(fourthX + " " + fourthY + "\n");
+        bw.flush();
     }
 
     public static int findSpot(int first, int second, int third) {

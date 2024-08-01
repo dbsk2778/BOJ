@@ -1,8 +1,8 @@
-package 생활코딩.BRONZE3.Day3;
+package 생활코딩.BRONZE3.Day4;
 
 import java.io.*;
 
-public class BOJ10162 {
+public class BOJ15894 {
     public static void main(String[] args) throws IOException {
         solution();
     }
@@ -11,16 +11,9 @@ public class BOJ10162 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int T = Integer.parseInt(br.readLine());
+        long n = Integer.parseInt(br.readLine());
 
-        if (T % 10 != 0) {
-            bw.write(-1 + "\n");
-        } else {
-            int A = T / 300;
-            int B = (T % 300) / 60;
-            int C = (T % 60) / 10;
-            bw.write(A + " " + B + " " + C + "\n");
-        }
+        bw.write(4 * n + "\n");
         bw.flush();
     }
 }

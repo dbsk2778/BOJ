@@ -1,8 +1,8 @@
-package 생활코딩.BRONZE3.Day3;
+package 생활코딩.BRONZE3.Day4;
 
 import java.io.*;
 
-public class BOJ10162 {
+public class BOJ2720 {
     public static void main(String[] args) throws IOException {
         solution();
     }
@@ -13,14 +13,17 @@ public class BOJ10162 {
 
         int T = Integer.parseInt(br.readLine());
 
-        if (T % 10 != 0) {
-            bw.write(-1 + "\n");
-        } else {
-            int A = T / 300;
-            int B = (T % 300) / 60;
-            int C = (T % 60) / 10;
-            bw.write(A + " " + B + " " + C + "\n");
+        for (int i = 0; i < T; i++) {
+            int K = Integer.parseInt(br.readLine());
+
+            int Quarter = K / 25;
+            int Dime = (K % 25) / 10;
+            int Nickel = ((K % 25) % 10) / 5;
+            int Penny = K % 5;
+
+            bw.write(Quarter + " " + Dime + " " + Nickel + " " + Penny + "\n");
         }
+
         bw.flush();
     }
 }

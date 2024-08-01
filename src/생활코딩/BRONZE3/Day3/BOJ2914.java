@@ -17,7 +17,7 @@ public class BOJ2914 {
         int A = Integer.parseInt(st.nextToken());
         int I = Integer.parseInt(st.nextToken());
 
-        bw.write(A *  (I - 1) + 1 + "\n");
+        bw.write(A * (I - 1) + 1 + "\n");
 
         bw.flush();
 //        bw.close();

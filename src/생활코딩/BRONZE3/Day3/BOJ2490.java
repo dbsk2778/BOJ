@@ -21,7 +21,7 @@ public class BOJ2490 {
             // stream 보다 조금 더 빠름
             long count = 0;
             for (String s : arr) {
-                if (s.equals("0"))  count++;
+                if (s.equals("0")) count++;
             }
 
             bw.write(getStatus(count) + "\n");

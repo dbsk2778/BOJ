@@ -37,7 +37,7 @@ public class BOJ2884 {
 
         if (M < 45) {
             M += 60;
-            if ( H == 0 ) H = 23;
+            if (H == 0) H = 23;
             else H--;
         }
 

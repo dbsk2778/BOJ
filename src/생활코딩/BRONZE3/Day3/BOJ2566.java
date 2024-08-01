@@ -18,7 +18,7 @@ public class BOJ2566 {
             String[] arr = br.readLine().split(" ");
             for (int j = 0; j < 9; j++) {
                 int num = Integer.parseInt(arr[j]);
-                if (num > max)  {
+                if (num > max) {
                     max = num;
                     x = i;
                     y = j;
