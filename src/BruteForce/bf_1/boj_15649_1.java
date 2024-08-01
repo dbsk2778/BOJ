@@ -23,76 +23,76 @@ public class boj_15649_1 {
      3) 순서가 중요한지 파악하기
    */
 
-  static StringBuilder sb = new StringBuilder();
-  static int N, M;
-  static int[] selected, used;
+    static StringBuilder sb = new StringBuilder();
+    static int N, M;
+    static int[] selected, used;
 
-  public static void input() {
-    Scanner scan = new Scanner(System.in);
-    N = scan.nextInt();
-    M = scan.nextInt();
-    selected = new int[M + 1];
-    // 어떤 숫자가 쓰였는지 쓰이지 않았는지를 기록하는 배열
-    used = new int[N + 1];
-  }
-
-  public static void main(String[] args) {
-    input();
-    rec_func(1);
-    System.out.println(sb.toString());
-    input();
-    rec_func2(1);
-  }
-
-  // for문이 하나 더 추가되므로, 시간 복잡도는 높아진다.
-  public static void rec_func(int k) {
-    if (k == M + 1) {
-      for (int i = 1; i <= M ; i++) {
-        sb.append(selected[i]).append(' ');
-      }
-      sb.append('\n');
-    } else {
-      for (int cand = 1; cand <= N; cand++) {
-        // 중복을 허용하지 않음 (selected 배열에 같은 수가 있는지 확인)
-        boolean isUsed = false;
-        for (int i = 1; i < k; i++) {
-          // 만약 i번째 숫자가 이번에 넣을 cand와 같다면
-          if (selected[i] == cand) {
-            isUsed = true;
-            break;
-          }
-        }
-        // 한번도 사용된적이 없다면?
-        if (!isUsed) {
-          selected[k] = cand;
-          rec_func( k + 1);
-          selected[k] = 0;
-        }
-      }
+    public static void input() {
+        Scanner scan = new Scanner(System.in);
+        N = scan.nextInt();
+        M = scan.nextInt();
+        selected = new int[M + 1];
+        // 어떤 숫자가 쓰였는지 쓰이지 않았는지를 기록하는 배열
+        used = new int[N + 1];
     }
-  }
 
-  // used 배열 사용 (어떤 숫자가 쓰였는지 기록하는 배열) - 시간 복잡도 줄이기
-  public static void rec_func2(int k) {
-    if (k == M + 1) {
-      for (int i = 1; i <= M; i++) {
-        System.out.print(selected[i] + " ");
-      }
-      System.out.println();
-    } else {
-      for (int cand = 1; cand <= N; cand++) {
-        // 중복을 허용하지 않음 (selected 배열에 같은 수가 있는지 확인)
-        if (used[cand] == 1) {  // 배열만 확인하면 됨
-          continue;
-        }
-        // k번째에 cand가 올 수 있으면
-        selected[k] = cand;
-        used[cand] = 1;
-        rec_func2(k + 1);
-        selected[k] = 0;
-        // 다 쓴 다음에 다시 0으로 초기화, 재귀호출을 할때는 초기화를 잘 해줘야 함
-        used[cand] = 0;
-      }
+    public static void main(String[] args) {
+        input();
+        rec_func(1);
+        System.out.println(sb.toString());
+        input();
+        rec_func2(1);
     }
-  }
+
+    // for문이 하나 더 추가되므로, 시간 복잡도는 높아진다.
+    public static void rec_func(int k) {
+        if (k == M + 1) {
+            for (int i = 1; i <= M; i++) {
+                sb.append(selected[i]).append(' ');
+            }
+            sb.append('\n');
+        } else {
+            for (int cand = 1; cand <= N; cand++) {
+                // 중복을 허용하지 않음 (selected 배열에 같은 수가 있는지 확인)
+                boolean isUsed = false;
+                for (int i = 1; i < k; i++) {
+                    // 만약 i번째 숫자가 이번에 넣을 cand와 같다면
+                    if (selected[i] == cand) {
+                        isUsed = true;
+                        break;
+                    }
+                }
+                // 한번도 사용된적이 없다면?
+                if (!isUsed) {
+                    selected[k] = cand;
+                    rec_func(k + 1);
+                    selected[k] = 0;
+                }
+            }
+        }
+    }
+
+    // used 배열 사용 (어떤 숫자가 쓰였는지 기록하는 배열) - 시간 복잡도 줄이기
+    public static void rec_func2(int k) {
+        if (k == M + 1) {
+            for (int i = 1; i <= M; i++) {
+                System.out.print(selected[i] + " ");
+            }
+            System.out.println();
+        } else {
+            for (int cand = 1; cand <= N; cand++) {
+                // 중복을 허용하지 않음 (selected 배열에 같은 수가 있는지 확인)
+                if (used[cand] == 1) {  // 배열만 확인하면 됨
+                    continue;
+                }
+                // k번째에 cand가 올 수 있으면
+                selected[k] = cand;
+                used[cand] = 1;
+                rec_func2(k + 1);
+                selected[k] = 0;
+                // 다 쓴 다음에 다시 0으로 초기화, 재귀호출을 할때는 초기화를 잘 해줘야 함
+                used[cand] = 0;
+            }
+        }
+    }
 }

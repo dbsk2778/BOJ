@@ -11,7 +11,7 @@ public class BOJ5086 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        while(true) {
+        while (true) {
             String[] strs = br.readLine().split(" ");
             int first = Integer.parseInt(strs[0]);
             int second = Integer.parseInt(strs[1]);
@@ -21,7 +21,7 @@ public class BOJ5086 {
             }
 
             // 약수인지, 아무것도 아닌지 둘 중 하나만 확인
-            if ( first < second ) {
+            if (first < second) {
                 str = checkNums(first, second) ? "factor" : "neither";
             }
             // 배수인지, 아무것도 아닌지 둘 중 하나 확인

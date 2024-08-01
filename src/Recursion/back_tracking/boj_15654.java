@@ -83,7 +83,7 @@ public class boj_15654 {
         }
         // Recursive Case
         for (int i = 0; i < n; i++) {
-            if(!check[i]) {
+            if (!check[i]) {
                 // 이 안에 들어왔다는건 숫자를 뽑았다는걸 의미
                 // 사용했다고 check, 다음번에 사용되지 않도록
                 check[i] = true;

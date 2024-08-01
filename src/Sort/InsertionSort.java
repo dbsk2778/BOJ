@@ -36,8 +36,8 @@ public class InsertionSort {
 
             int j = i - 1;
             // 타겟이 이전 원소보다 크기 전 까지 반복
-            while(j >= 0 && key < arr[j]) {
-                arr[j + 1] = arr[j];	// 기준 값보다 큰 값들을 한 칸씩 뒤로 이동
+            while (j >= 0 && key < arr[j]) {
+                arr[j + 1] = arr[j];    // 기준 값보다 큰 값들을 한 칸씩 뒤로 이동
                 j--;
             }
 

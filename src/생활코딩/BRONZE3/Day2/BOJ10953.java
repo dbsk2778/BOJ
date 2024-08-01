@@ -13,7 +13,7 @@ public class BOJ10953 {
 
         int T = Integer.parseInt(br.readLine());
 
-        for (int i = 0 ; i < T; i++) {
+        for (int i = 0; i < T; i++) {
             String[] arr = br.readLine().split(",");
             int A = Integer.parseInt(arr[0]);
             int B = Integer.parseInt(arr[1]);
