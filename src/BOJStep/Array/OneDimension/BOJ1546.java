@@ -1,4 +1,4 @@
-package BOJStep.Array;
+package BOJStep.Array.OneDimension;
 
 import java.io.BufferedReader;
 import java.io.IOException;
