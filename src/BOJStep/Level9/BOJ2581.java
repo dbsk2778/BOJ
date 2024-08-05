@@ -10,6 +10,7 @@ public class BOJ2581 {
     public static void main(String[] args) throws IOException {
         solution();
     }
+
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int M = Integer.parseInt(br.readLine());
