@@ -1,4 +1,4 @@
-package BOJStep.String;
+package BOJStep.Level5;
 
 import java.io.*;
 import java.util.Arrays;

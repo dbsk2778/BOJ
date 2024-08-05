@@ -1,4 +1,4 @@
-package BOJStep.For;
+package BOJStep.Level3;
 
 import java.io.BufferedReader;
 import java.io.IOException;
