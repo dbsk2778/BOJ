@@ -1,4 +1,4 @@
-package BOJStep.Array.OneDimension;
+package BOJStep.Array.Level4;
 
 import java.io.*;
 import java.util.StringTokenizer;

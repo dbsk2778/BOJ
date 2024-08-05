@@ -1,4 +1,4 @@
-package BOJStep.Advanced;
+package BOJStep.Level6;
 
 import java.io.*;
 import java.util.StringTokenizer;
