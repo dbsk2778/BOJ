@@ -19,7 +19,7 @@ public class BOJ10871 {
 
         st = new StringTokenizer(br.readLine());
 
-        for (int i =0; i < N; i++) {
+        for (int i = 0; i < N; i++) {
             int num = Integer.parseInt(st.nextToken());
             if (num < X) {
                 bw.write(num + " ");

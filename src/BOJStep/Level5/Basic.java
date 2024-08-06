@@ -39,7 +39,7 @@ public class Basic {
 
         for (int i = 0; i < N; i++) {
             String str = br.readLine();
-            bw.write(str.charAt(0) + "" + str.charAt(str.length()-1) + "\n");
+            bw.write(str.charAt(0) + "" + str.charAt(str.length() - 1) + "\n");
         }
         bw.flush();
     }

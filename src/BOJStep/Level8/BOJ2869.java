@@ -17,7 +17,8 @@ public class BOJ2869 {
         int A = Integer.parseInt(st.nextToken()); // 낮에 올라가는 정도
         int B = Integer.parseInt(st.nextToken()); // 밤에 미끄러지는 정도
         int V = Integer.parseInt(st.nextToken()); // 달팽이가 올라갈 높이
-        int num = 0; int day = 0;
+        int num = 0;
+        int day = 0;
 
         while (V > num) {
             num += A;

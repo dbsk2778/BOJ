@@ -49,14 +49,14 @@ public class BOJ1193 {
         int X = Integer.parseInt(br.readLine());
         int num = 1;
 
-        while ( X > num ) {
+        while (X > num) {
             X -= num++;
         }
 
         if (num % 2 == 0) {
             System.out.println(X + "/" + (num + 1 - X));
         } else {
-            System.out.println((num + 1 - X) + "/"  + X);
+            System.out.println((num + 1 - X) + "/" + X);
         }
     }
 }
