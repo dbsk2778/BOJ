@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 // 전형적인 백트래킹 문제
-public class boj_15654 {
+public class BOJ15654 {
 
     /**
      * 1. 순열(Permutation): 집합 안에서 가능한 모든 조합을 나열하는 것
