@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion.fibo;
 
 import java.io.BufferedReader;
 import java.io.IOException;

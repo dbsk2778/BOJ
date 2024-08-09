@@ -1,21 +1,21 @@
-package Recursion.back_tracking;
+package Recursion.NM;
 
 import java.io.*;
-import java.util.Arrays;
-import java.util.StringTokenizer;
+import java.util.*;
 
-public class BOJ15654_MAIN {
+public class BOJ15655 {
     public static void main(String[] args) throws IOException {
+        // 고른 수열이 전부 다 오름차순이여야 한다.
+        // 1. 출력 직전에 오름차순 검사 (시간 복잡도 매우 높음)
+        // 2. 재귀를 오름차순으로만 진입할 수 있게 조건 변경 (재귀 이전에 sort 해주고, 제약 조건 주기) - 기존보다 시간복잡도 낮아짐
         solution();
     }
 
     static int n, m;
     static int[] arr;
     static boolean[] isUsed;
-    // 뽑은 수가 담긴 배열 - 이 의미는 3개를 뽑아라고 하면 3개의 숫자가 담겨있음 !! (하나의 줄, 하나의 케이스를 담는 공간임)
     static int[] output;
     static StringBuilder sb = new StringBuilder();
-
 
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -35,28 +35,27 @@ public class BOJ15654_MAIN {
 
         Arrays.sort(arr);
 
-        recursion(0);
-        // 출력을 여기서 한번만 해주는게 훨씬 더 좋음
+        recursion(0, 0);
         System.out.println(sb);
     }
 
-    private static void recursion(int depth) {
-        // m개를 다 뽑았을 때 (Base Case)
-        // 원하는 숫자를 뽑았으니 출력해주면 됨
+    // 오름차순으로 정렬된 값만 출력하기 위해 start 변수 추가
+    private static void recursion(int depth, int start) {
+        // baseCase
         if (depth == m) {
             for (int i = 0; i < m; i++) {
                 sb.append(output[i]).append(" ");
             }
-            // System.out.println(sb);
             sb.append("\n");
-            return;  // 더 이상 숫자를 뽑으면 안됨
+            return;
         }
-        for (int i = 0; i < n; i++) {
+
+        for (int i = start; i < n; i++) {
             if (!isUsed[i]) {
                 isUsed[i] = true;
-                // output은 안비워줘도 되는건가? 당연히 같은 자리에 다른 숫자 들어감 !!
                 output[depth] = arr[i];
-                recursion(depth + 1);
+                // i + 1으로 함으로써 자신보다 큰 수로 재귀 범위를 줄이기
+                recursion(depth + 1, i + 1);
                 isUsed[i] = false;
             }
         }
