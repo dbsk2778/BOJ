@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion.fibo;
 
 import java.util.HashMap;
 import java.util.Map;
