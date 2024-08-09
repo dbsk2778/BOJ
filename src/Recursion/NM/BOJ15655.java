@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion.NM;
 
 import java.io.*;
 import java.util.*;

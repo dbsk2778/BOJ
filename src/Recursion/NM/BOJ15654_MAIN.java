@@ -1,4 +1,4 @@
-package Recursion.back_tracking;
+package Recursion.NM;
 
 import java.io.*;
 import java.util.Arrays;
@@ -11,6 +11,7 @@ public class BOJ15654_MAIN {
 
     static int n, m;
     static int[] arr;
+    // 중복 방지 배열
     static boolean[] isUsed;
     // 뽑은 수가 담긴 배열 - 이 의미는 3개를 뽑아라고 하면 3개의 숫자가 담겨있음 !! (하나의 줄, 하나의 케이스를 담는 공간임)
     static int[] output;

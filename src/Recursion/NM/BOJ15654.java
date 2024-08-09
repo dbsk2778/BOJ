@@ -1,4 +1,4 @@
-package Recursion.back_tracking;
+package Recursion.NM;
 
 import java.util.Arrays;
 import java.util.Scanner;
