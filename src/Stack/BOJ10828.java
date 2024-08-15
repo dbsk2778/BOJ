@@ -6,7 +6,6 @@ import java.util.Deque;
 
 public class BOJ10828 {
 
-    // LinkedList 사용 가능
 //    static Deque<Integer> deque = new LinkedList<>();
 
     // 강의에서는 ArrayDeque 사용
