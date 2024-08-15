@@ -6,6 +6,7 @@ import java.util.*;
 public class BOJ1158 {
 
     // 큐로 하는것보다 리스트로 하는게 훨씬 빠름
+    // 시간 복잡도는 동일하다는데..?
     public static void main(String[] args) throws IOException {
         solution();
         solution2();
