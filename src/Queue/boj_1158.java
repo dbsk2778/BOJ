@@ -1,16 +1,14 @@
 package Queue;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class boj_1158 {
 
     public static void main(String[] args) throws Exception {
-        solution2(7, 3);
-        solution();
+        solution2();
+//        solution();
     }
 
     // Queue 사용 - 이 문제는 원형 구조이기 때문에 Queue로 하는게 쉽게 구현 가능
@@ -47,22 +45,30 @@ public class boj_1158 {
     }
 
     // List 사용
-    public static void solution2(int N, int K) {
-        List<Integer> orders = new ArrayList<>();
-        List<Integer> people = new ArrayList<>();
+    public static void solution2() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        // 1부터 N까지 리스트에 넣는다
+        int N = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
+
+        Queue<Integer> q = new LinkedList<>();
+
         for (int i = 1; i <= N; i++) {
-            people.add(i);
+            q.offer(i); // queue.add()와 동일
         }
 
-        int index = 0;  // 현재 제거할 사람의 인덱스
+        int[] ans = new int[N];
 
-        while (!people.isEmpty()) {
-            index = (index + K - 1) % people.size();  // K번째 사람의 인덱스를 계산
-            orders.add(people.remove(index));  // K번째 사람을 제거하고 리스트에 추가
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < K - 1; j++) {
+                q.add(q.poll());
+            }
+            ans[i] = q.poll();
         }
 
-        System.out.println(orders);
+        System.out.println("<" + Arrays.stream(ans)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining(", ")) + ">");
     }
 }
