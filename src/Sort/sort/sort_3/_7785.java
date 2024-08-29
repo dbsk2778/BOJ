@@ -1,4 +1,4 @@
-package Sort.sort_3;
+package Sort.sort.sort_3;
 
 import java.io.*;
 import java.util.ArrayList;

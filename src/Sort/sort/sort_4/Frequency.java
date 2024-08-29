@@ -1,4 +1,4 @@
-package Sort.sort_4;
+package Sort.sort.sort_4;
 
 public class Frequency {
 

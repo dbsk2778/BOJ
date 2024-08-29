@@ -1,7 +1,6 @@
-package Sort.sort_2;
+package Sort.sort.sort_2;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class _1181 {

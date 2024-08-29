@@ -1,4 +1,4 @@
-package Sort.sort_2;
+package Sort.sort.sort_2;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

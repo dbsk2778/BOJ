@@ -1,4 +1,4 @@
-package Sort.sort_2;
+package Sort.sort.sort_2;
 
 public class Member implements Comparable<Member> {
   private final int index;

@@ -1,6 +1,6 @@
 package Sort;
 
-import Sort.sort_1.Student;
+import Sort.sort.sort_1.Student;
 
 import java.io.BufferedReader;
 import java.io.IOException;
