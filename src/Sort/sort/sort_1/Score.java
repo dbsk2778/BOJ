@@ -2,14 +2,14 @@ package Sort.sort.sort_1;
 
 public class Score {
 
-  private int score;
+    private int score;
 
-  public Score(int score) {
-    this.score = score;
-  }
+    public Score(int score) {
+        this.score = score;
+    }
 
-  public int getScore() {
-    return score;
-  }
+    public int getScore() {
+        return score;
+    }
 
 }

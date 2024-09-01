@@ -2,40 +2,40 @@ package Sort.sort.sort_4;
 
 public class Frequency {
 
-  // 만약 setter을 안쓰면 final로 선언해도 된다.
-  private int num;
-  private int count;
-  private int firstIndex;
+    // 만약 setter을 안쓰면 final로 선언해도 된다.
+    private int num;
+    private int count;
+    private int firstIndex;
 
-  public Frequency(int num, int count, int firstIndex) {
-    this.num = num;
-    this.count = count;
-    this.firstIndex = firstIndex;
-  }
+    public Frequency(int num, int count, int firstIndex) {
+        this.num = num;
+        this.count = count;
+        this.firstIndex = firstIndex;
+    }
 
-  public int getNum() {
-    return num;
-  }
+    public int getNum() {
+        return num;
+    }
 
-  public int getCount() {
-    return count;
-  }
+    public int getCount() {
+        return count;
+    }
 
-  public int getFirstIndex() {
-    return firstIndex;
-  }
+    public int getFirstIndex() {
+        return firstIndex;
+    }
 
-  public int setNum(int num) {
-    return this.num = num;
-  }
+    public int setNum(int num) {
+        return this.num = num;
+    }
 
-  public int setCount(int count) {
-    return this.count = count;
-  }
+    public int setCount(int count) {
+        return this.count = count;
+    }
 
-  public int setFirstIndex(int firstIndex) {
-    return this.firstIndex = firstIndex;
-  }
+    public int setFirstIndex(int firstIndex) {
+        return this.firstIndex = firstIndex;
+    }
 }
 
 
